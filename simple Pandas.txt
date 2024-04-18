@@ -1,0 +1,22 @@
+Pandas
+import pandas as pd
+Tworzenie ramki danych z listy
+data = [1, 2, 3, 4, 5]
+df = pd.DataFrame(data, columns=['Numbers'])
+Wczytywanie danych z pliku CSV ( i nie tylko csv)
+df = pd.read_csv('nazwa_pliku.csv', sep = „\t”)
+Podgląd danych
+print(df.head())  # Pierwsze kilka wierszy
+print(df.tail())  # Ostatnie kilka wierszy
+Informacje o ramce danych
+print(df.info())  # Informacje o kolumnach i typach danych
+print(df.describe())  # Podsumowanie statystyczne danych
+Wybieranie danych
+print(df['kolumna'])  # Wybór kolumny
+print(df.iloc[0])  # Wybór wiersza po indeksie
+print(df.loc['indeks'])  # Wybór wiersza po etykiecie
+Modyfikacja danych
+df['kolumna'] = df['kolumna'] * 2  # Mnożenie wartości w kolumnie przez 2
+df.dropna()  # Usuwanie wierszy z brakującymi wartościami
+Zapisywanie danych do pliku
+df.to_csv('nazwa_pliku.csv', index=False)  # Zapis danych do pliku CSV
