@@ -1,4 +1,5 @@
 import tkinter as tk
+import pprint as pp
 
 # by_script settable parameters & options (no parameters validation)
 window_size_converter = 0.8  # min rational value is 0.35
@@ -10,7 +11,7 @@ default_unknown_command_line2 = ",type: [h]elp"
 def execute(event=None, result_box_counter=0):
     def command_list(command):
 
-        def help():
+        def help_me():
             pass
 
         def a1():
@@ -20,12 +21,14 @@ def execute(event=None, result_box_counter=0):
             return "a2 ok"
 
         if command == "a1":
-            command_list_result = a1()
+            return a1()
         elif command == 'a2':
-            command_list_result = a2()
+            return a2()
+        elif command == 'h':
+            return help_me()
         else:
-            command_list_result = default_unknown_command_line1 + command + default_unknown_command_line2
-        return command_list_result
+            return default_unknown_command_line1 + command + default_unknown_command_line2
+        #return command_list_result
 
     try:
         command = command_box.get("1.0", "end-1c").strip()
