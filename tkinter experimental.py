@@ -1,5 +1,4 @@
 import tkinter as tk
-import pprint as pp
 
 # by_script settable parameters & options (no parameters validation)
 window_size_converter = 0.8  # min rational value is 0.35
