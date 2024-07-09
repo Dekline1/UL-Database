@@ -2,13 +2,9 @@ import pandas as pd
 import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context
+url = "https://iq.ul.com/pwb/Trade.aspx"
+scraper = pd.read_html(url)
+print(scraper)
+scraper[0].to_csv("ULlist.csv", index=False)
 
-scraper = pd.read_html("https://iq.ul.com/pwb/Trade.aspx")
-
-i = [0, 1,2,3]
-for df in scraper:
-    #print(df[i].to_string(header=False))
-    for line in df[i]:
-        line.to_csv('id.txt', header=False, index=False)
-
-
+# generuje csv bez rozdzielenia na nazwe producenta i jego UL
